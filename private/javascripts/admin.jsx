@@ -39,9 +39,9 @@ var ApplicantTableRowComponent = React.createClass({
     return (
       <tr className="applicant-row" onClick={this.showAnswers}>
         <td>{this.props.id}</td>
+        <td>{this.props.numQuestions}</td>
         <td>{this.props.numAnswered}</td>
         <td>{this.props.numCorrect}</td>
-        <td>{this.props.numQuestions}</td>
       </tr>
     );
   },
