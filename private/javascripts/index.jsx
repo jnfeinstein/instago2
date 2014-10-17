@@ -109,7 +109,14 @@ var InterfaceComponent = React.createClass({
           <QuestionComponent key={title} title={title} images={images} submitClicked={self.submitClicked}/>
         );
       });
-      self.setState({loading: false, questions: _.shuffle(questionComponents), currentQuestion: 0, answers: []});
+
+      var shuffledQuestions = _.shuffle(questionComponents)
+      self.setState({loading: false, questions: shuffledQuestions, currentQuestion: 0, answers: []});
+
+      // Load images in the order that they are needed
+      _.each(shuffledQuestions, function(question) {
+        loadImages(question.props.images);
+      });
     });
   },
   render: function() {
@@ -185,6 +192,12 @@ var InterfaceComponent = React.createClass({
 
 function loadQuestions() {
   return $.getJSON("/json/zquestions.json");
+}
+
+function loadImages(srcs) {
+  _.each(srcs, function(src) {
+    $("<img/>", {src: src}); // This will cause the browser to load and cache the images
+  });
 }
 
 $(function() {
