@@ -122,13 +122,13 @@ var InterfaceComponent = React.createClass({
   render: function() {
     if (this.state.loading) {
       return (
-        <div>Loading...</div>
+        <div className="basic-container">Loading...</div>
       );
     }
 
     if (!this.state.started) {
       return (
-        <div className="start-container">
+        <div className="basic-container">
           <a href="javascript:void(0);" className="btn btn-primary btn-sm" onClick={this.started}>Start Quiz</a>
         </div>
       );
@@ -136,7 +136,7 @@ var InterfaceComponent = React.createClass({
 
     if (this.state.finished) {
       return (
-        <div>Finished!</div>
+        <div className="basic-container">Finished!</div>
       );
     }
 
