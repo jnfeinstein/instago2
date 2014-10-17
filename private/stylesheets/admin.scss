@@ -9,6 +9,15 @@ div.hide-answers {
   margin: 10px 0px 0px 10px;
 }
 
+table.applicant-table tr.applicant-row{
+  cursor: pointer;
+  cursor: hand;
+
+  &:hover {
+    background-color: lightgoldenrodyellow;
+  }
+}
+
 table.answers-table tr {
   &.correct {
     background-color: lightgreen;

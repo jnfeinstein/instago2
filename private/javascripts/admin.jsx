@@ -37,8 +37,8 @@ var AnswersTableComponent = React.createClass({
 var ApplicantTableRowComponent = React.createClass({
   render: function() {
     return (
-      <tr>
-        <td><a href="javascript:void(0);" onClick={this.showAnswers}>{this.props.id}</a></td>
+      <tr className="applicant-row" onClick={this.showAnswers}>
+        <td>{this.props.id}</td>
         <td>{this.props.numAnswered}</td>
         <td>{this.props.numCorrect}</td>
         <td>{this.props.numQuestions}</td>
