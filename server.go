@@ -27,6 +27,7 @@ type Applicant struct {
 	Id           int      `form:"id" json:"id" db:"id"`
 	Answers      []Answer `form:"answers" json:"answers" db:"-"`
 	NumQuestions int      `form:"numQuestions" json:"numQuestions" db:"num_questions"`
+	NumAnswered  int      `form:"numAnswered" json:"numAnswered" db:"num_answered"`
 	NumCorrect   int      `form:"numCorrect" json:"numCorrect" db:"num_correct"`
 }
 
@@ -69,6 +70,7 @@ func main() {
 	})
 
 	m.Post("/answers", binding.Bind(Applicant{}), func(w http.ResponseWriter, applicant Applicant) {
+		applicant.NumAnswered = len(applicant.Answers)
 		err := dbmap.Insert(&applicant)
 		if err != nil {
 			fmt.Printf("ERROR: %s\n", err.Error())

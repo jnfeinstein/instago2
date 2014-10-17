@@ -39,6 +39,7 @@ var ApplicantTableRowComponent = React.createClass({
     return (
       <tr>
         <td><a href="javascript:void(0);" onClick={this.showAnswers}>{this.props.id}</a></td>
+        <td>{this.props.numAnswered}</td>
         <td>{this.props.numCorrect}</td>
         <td>{this.props.numQuestions}</td>
       </tr>
@@ -57,8 +58,9 @@ var ApplicantTableComponent = React.createClass({
       return <ApplicantTableRowComponent
                 key={applicant.id}
                 id={applicant.id}
-                numCorrect={applicant.numCorrect}
                 numQuestions={applicant.numQuestions}
+                numAnswered={applicant.numAnswered}
+                numCorrect={applicant.numCorrect}
                 showAnswers={self.props.showAnswers} />
     });
 
@@ -66,8 +68,9 @@ var ApplicantTableComponent = React.createClass({
       <table className="applicant-table">
         <tr>
           <th>Applicant #</th>
-          <th>Number correct</th>
           <th>Total questions</th>
+          <th>Number answered</th>
+          <th>Number correct</th>
         </tr>
         {applicantRows}
       </table>
