@@ -147,7 +147,7 @@ var InterfaceComponent = React.createClass({
     this.state.answers.push(answer);
 
     var nextQuestion = this.state.currentQuestion + 1;
-    if (true || nextQuestion >= this.state.questions.length) {
+    if (nextQuestion >= this.state.questions.length) {
       this.finished();
     } else {
       this.setState({currentQuestion: nextQuestion});

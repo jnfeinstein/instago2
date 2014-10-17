@@ -4,8 +4,6 @@
   "dependencies": {
     "jquery": "*",
     "bootstrap": "*",
-    "backbone": "*",
-    "react.backbone": "*",
     "underscore": "*",
     "react": "~0.11.1"
   }

@@ -29,7 +29,6 @@ module.exports = function(grunt) {
       },
       vendor: {
         files: {
-          'public/vendor/backbone/backbone.min.js': 'public/vendor/backbone/backbone.js'
         }
       }
     },
