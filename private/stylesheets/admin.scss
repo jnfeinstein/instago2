@@ -1,0 +1,19 @@
+table.applicant-table, table.answers-table {
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+div.hide-answers {
+  margin: 10px 0px 0px 10px;
+}
+
+table.answers-table tr {
+  &.correct {
+    background-color: lightgreen;
+  }
+  &.incorrect {
+    background-color: lightcoral;
+  }
+}

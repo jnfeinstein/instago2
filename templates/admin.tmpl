@@ -1,0 +1,9 @@
+<div id="example"></div>
+
+<link rel="stylesheet" href="/stylesheets/admin.css">
+
+{{ if heroku }}
+  <script type="text/javascript" src="/javascripts/admin.min.js"></script>
+{{ else }}
+  <script type="text/javascript" src="/javascripts/admin.js"></script>
+{{ end }}
