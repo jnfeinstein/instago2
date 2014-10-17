@@ -6,8 +6,11 @@ function formatTime(seconds) {
   var result = '';
   
   if (minutes > 0) {
-    result += minutes + ":";
+    result += minutes;
+  } else {
+    result += "0"
   }
+  result += ":";
   if (newSeconds < 10) {
     result += "0";
   }
