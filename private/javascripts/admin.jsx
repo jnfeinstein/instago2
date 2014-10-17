@@ -64,16 +64,23 @@ var ApplicantTableComponent = React.createClass({
                 showAnswers={self.props.showAnswers} />
     });
 
+    var instructions = applicantRows.length >= 1 ?
+      <div className="instructions">Click a row to view a detailed breakdown</div> :
+      null;
+
     return (
-      <table className="applicant-table">
-        <tr>
-          <th>Applicant #</th>
-          <th>Total questions</th>
-          <th>Number answered</th>
-          <th>Number correct</th>
-        </tr>
-        {applicantRows}
-      </table>
+      <div>
+        <table className="applicant-table">
+          <tr>
+            <th>Applicant #</th>
+            <th>Total questions</th>
+            <th>Number answered</th>
+            <th>Number correct</th>
+          </tr>
+          {applicantRows}
+        </table>
+        {instructions}
+      </div>
     );
   },
 });
