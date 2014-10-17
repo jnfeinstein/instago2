@@ -126,10 +126,16 @@ var InterfaceComponent = React.createClass({
       );
     }
 
+    var numQuestions = this.state.questions.length;
     if (!this.state.started) {
       return (
         <div className="basic-container">
-          <a href="javascript:void(0);" className="btn btn-primary btn-sm" onClick={this.started}>Start Quiz</a>
+          <div className="directions">
+          You will be shown the names of {numQuestions} product{numQuestions >= 2 ? 's' : ''}.  For each product,
+          you will also be shown four images.  Select the image that matches the product.  You will have two
+          minutes to complete the quiz.  Good luck!
+          </div>
+          <a href="javascript:void(0);" className="btn btn-primary btn-sm start" onClick={this.started}>Start Quiz</a>
         </div>
       );
     }
@@ -144,7 +150,7 @@ var InterfaceComponent = React.createClass({
       <div className="main-container">
         <div className="time-container">
           <h4>{formatTime(this.state.time)}</h4>
-          <h4>{this.state.currentQuestion + 1}/{this.state.questions.length}</h4>
+          <h4>{this.state.currentQuestion + 1}/{numQuestions}</h4>
         </div>
         <div style={{clear: 'both'}}></div>
         <div className="currentQuestion">
